@@ -1,0 +1,23 @@
+{
+	"targetArn": "arn:aws:iot:us-east-1:055879235040:thinggroup/us-east-1-iot-thing-group",
+	"deploymentName": "Deployment for us-east-1-iot-thing-group",
+	"components": {
+		"aws.greengrass.Cli": {
+			"componentVersion": "2.12.2"
+		},
+		"com.shareflow.DataProcess": {
+			"componentVersion": "1.0.0"
+		}
+	},
+	"deploymentPolicies": {
+		"failureHandlingPolicy": "DO_NOTHING",
+		"componentUpdatePolicy": {
+			"timeoutInSeconds": 60,
+			"action": "NOTIFY_COMPONENTS"
+		},
+		"configurationValidationPolicy": {
+			"timeoutInSeconds": 60
+		}
+	},
+	"iotJobConfiguration": {}
+}

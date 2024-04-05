@@ -1,0 +1,8 @@
+pyserial
+paho-mqtt
+pandas
+websockets
+aiohttp
+awsiotsdk
+python-dotenv
+python-decouple
