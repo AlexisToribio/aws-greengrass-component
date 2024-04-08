@@ -6,7 +6,7 @@
 			"componentVersion": "2.12.2"
 		},
 		"com.shareflow.DataProcess": {
-			"componentVersion": "1.0.0"
+			"componentVersion": "1.0.2"
 		}
 	},
 	"deploymentPolicies": {

@@ -12,8 +12,8 @@ from decouple import config
 
 def data_process():
     # MQTT broker configuration
-    broker_address = config("BROKER_ADDRESS")  # Replace with your MQTT broker address
-    broker_port = config("BROKER_PORT")  # Default MQTT port
+    broker_address = config("BROKER_ADDRESS", cast=str)  # Replace with your MQTT broker address
+    broker_port = config("BROKER_PORT", cast=int)  # Default MQTT port
     rootCa = "/greengrass/v2/rootCA.pem"
     thingCert = "/greengrass/v2/thingCert.crt"
     privKey = "/greengrass/v2/privKey.key"
@@ -47,7 +47,7 @@ def data_process():
     while True:
         try:
             # Open the serial connection
-            ser = serial.Serial(puerto_serial, velocidad, timeout=1)
+            ser = serial.Serial(puerto_serial, velocidad, timeout=1, rtscts=True, dsrdtr=True)
             break  # Exit the loop if connection is successful
         except Exception as e:
             print("Serial port connection error:", e)
